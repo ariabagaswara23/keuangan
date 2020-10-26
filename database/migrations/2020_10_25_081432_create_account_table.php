@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccountsTable extends Migration
+class CreateAccountTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,16 +14,10 @@ class CreateAccountsTable extends Migration
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->string('nip');
-            $table->string('nuptk');
-            $table->string('nama');
-            $table->string('jk');
-            $table->string('nama_jabatan');
-            $table->string('noHP');
-            $table->text('alamat');
-            $table->string('image');
+            $table->bigInteger('nip')->primary();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            $table->foreign('nip')->references('nip')->on('users');
         });
     }
 

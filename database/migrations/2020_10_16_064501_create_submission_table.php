@@ -13,11 +13,11 @@ class CreateSubmissionTable extends Migration
      */
     public function up()
     {
-        Schema::create('submission', function (Blueprint $table) {
-            $table->char('id_pengajuan', 10)->unique();
-            $table->string('judul');
+        Schema::create('submissions', function (Blueprint $table) {
+            $table->char('id_pengajuan', 10)->primary();
+            $table->string('judul', 100);
             $table->date('tgl_pengajuan');
-            $table->string('status');
+            $table->string('status', 6);
             $table->timestamps();
         });
     }
