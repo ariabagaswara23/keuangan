@@ -16,5 +16,21 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/',[DashboardController::class, 'index']);
-Route::get('/login',[LoginController::class, 'index']);
-Route::post('loginv',[LoginController::class, 'login']);
+Route::get('/login',[LoginController::class, 'index'])->name('login');
+Route::post('/checking',[LoginController::class, 'checklogin']);
+
+/* Masukan route 'yang butuh login dulu kalau bisa masuk' */
+Route::middleware('auth:accounts')->group(function () { 
+    Route::get('/login/successlogin',[LoginController::class, 'successlogin']);
+});
+Route::group(['middleware' => 'auth:'],function(){
+    //Route yang butuh autentikasi terlebih dahulu untuk masuk
+    Route::get('/kepsek',function(){
+        return view('index-kepsek');
+    });
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
