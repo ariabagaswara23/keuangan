@@ -3,11 +3,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
  	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
- 	<link href="../assets/fontawesome-free/css/all.min.css" rel="stylesheet">
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="icon" type="image/png" href="../img/icon/stm.png"/>
 	<title>Sistem Informasi Keuangan</title>
 </head>
-<body  style="background-image: url(img/bg/bg3.jpg); background-attachment: fixed; background-position: right bottom;">
+<body  style="background-image: url(img/bg/bg3.jpg);">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-3 border-right">
